@@ -76,10 +76,12 @@ function Factorial(n) {
   return total;
 }
 
-function CalcularCombinatoriaColor(palo1, palo2) {
+function CalcularCombinatoriaColor(palo1, palo2) 
+{
   let resultado = 0;
 
-  if (palo1 == palo2) {
+  if (palo1 == palo2) 
+  {
     let resultado1 =
       (((Factorial(11) / (Factorial(11 - 3) * 6)) * 39) * 38) / (Factorial(52) / (Factorial(52 - 5) * 120));
     let resultado2 =
@@ -91,9 +93,10 @@ function CalcularCombinatoriaColor(palo1, palo2) {
       (Factorial(52) / (Factorial(52 - 5) * 120));
     resultado = resultado1 + resultado2 + resultado3;
     resultadoPosible = (Factorial(39) / (Factorial(39 - 5) * 120) / (Factorial(52) / (Factorial(52 - 5) * 120))) * 3
-    resultadoTotal = [resultado, resultadoPosible]
+    resultadoTotal = [resultado, resultadoPosible];
     return resultadoTotal;
-  } else {
+  } 
+  else {
     let resultado1 =
       ((Factorial(12) / (Factorial(12 - 4) * 24)) * 38) /
       (Factorial(52) / (Factorial(52 - 5) * 120));
@@ -102,12 +105,8 @@ function CalcularCombinatoriaColor(palo1, palo2) {
       (Factorial(12 - 5) * 120) /
       (Factorial(52) / (Factorial(52 - 5) * 120));
     resultado = 2 * (resultado1 + resultado2);
-    resultadoTotal =
-      resultado +
-      (Factorial(26) /
-        (Factorial(26 - 5) * 120) /
-        (Factorial(52) / (Factorial(52 - 5) * 120))) *
-        2;
+    resultadoPosible = ((Factorial(26) / (Factorial(26 - 5) * 120))/ (Factorial(52) / (Factorial(52 - 5) * 120))) * 2;
+    resultadoTotal = [resultado, resultadoPosible];
     return resultadoTotal;
   }
 }
@@ -117,20 +116,31 @@ function CalcularCombinatoriaEscaleraReal(n1, n2) {
     if (n2.value == "KING" ||n2.value == "QUEEN" || n2.value == "JACK" || n2.value == "10" || n2.value == "ACE") {
       if(n1.suit == n2.suit) {
         // me sirven las 2
-        let resultado1 = (47 * 46) / (Factorial(50) / (Factorial(50 - 5) * Factorial(5)));
-        let resultado2 = (47 / (Factorial(50) / (Factorial(50 - 5) * Factorial(5)))) * 2;
-        let resultado3 = 4 / (Factorial(50) / (Factorial(50 - 5) * Factorial(5)));
-        resultadoTotal = resultado1 + resultado2 + resultado3;
-        return resultadoTotal;
+        let resultadoNumerador = (47 * 46)
+        let resultadoDenominador = (Factorial(50) / (Factorial(50 - 5) * Factorial(5)));
+        let resultado = [resultadoNumerador, resultadoDenominador];
+        return resultado;
       }
       // me sirven las 2 pero son de distinto palo
+      let resultadoNumerador = 2 * 46;
+      let resultadoDenominador = (Factorial(50) / (Factorial(50 - 5) * Factorial(5)));
+      let resultado = [resultadoNumerador, resultadoDenominador];
+      return resultado;
     } 
     else {
       // me sirve solo n1
+      let resultadoNumerador = 46;
+      let resultadoDenominador = (Factorial(50) / (Factorial(50 - 5) * Factorial(5)));
+      let resultado = [resultadoNumerador, resultadoDenominador];
+      return resultado;
     }
   } 
   else if (n2.value == "KING" ||n2.value == "QUEEN" ||n2.value == "JACK" ||n2.value == "10" ||n2.value == "ACE") {
     // me sirve solo n2
+    let resultadoNumerador = 2 * 46;
+    let resultadoDenominador = (Factorial(50) / (Factorial(50 - 5) * Factorial(5)));
+    let resultado = [resultadoNumerador, resultadoDenominador];
+    return resultado;
   } 
   else {
     // no me sirve ninguna
