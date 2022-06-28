@@ -1,53 +1,343 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Poker</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
     <!-- CSS only -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-    />
-
-    <link rel="stylesheet" href="style.css">
-
-    <title>Document</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   </head>
+
   <body>
-    <div>
-      <input
-        id="numero1"
-        type="text"
-        placeholder="Ingrese el numero de la carta"
-      />
-      <input
-        id="numero2"
-        type="text"
-        placeholder="Ingrese el numero de la segunda carta"
-      />
-      <button id="btn1" onclick="CalcularFactorial()">Factorial</button>
-      <button id="btn2" onclick="CalcularCombinatoria()">Combinatoria</button>
-      <button id="btn3" onclick="Calcular()">Calcular</button>
+    <table
+      align="center"
+      border="0"
+      cellpadding="0"
+      cellspacing="0"
+      width="960"
+    >
+      <tbody>
+        <tr>
+          <td
+            style="background-repeat: no-repeat"
+            background="images/header.jpg"
+            height="380"
+            valign="top"
+            width="960"
+          >
+            <div class="title" style="padding-left: 425px; padding-top: 25px">
+              PokerMaths
+            </div>
+            <div class="slogan" style="padding-left: 420px">
+              Calcula tus posibilidades
+            </div>
+          </td>
+        </tr>
 
+        <tr>
+          <td valign="top" width="960">
+            <table border="0" cellpadding="0" cellspacing="0" width="960">
+              <tbody>
+                <tr>
+                  <td valign="top" width="10">
+                    <img src="images/nav-lft.jpg" height="51" width="10" />
+                  </td>
+                  <td
+                    style="background-repeat: repeat-x"
+                    background="images/nav-bg.jpg"
+                    valign="top"
+                    width="940"
+                  >
+                    <table
+                      align="center"
+                      border="0"
+                      cellpadding="0"
+                      cellspacing="0"
+                      width="910"
+                    >
+                      <tbody>
+                        <tr>
+                          <td valign="top" width="7">
+                            <img
+                              src="images/nav-dvd.jpg"
+                              height="51"
+                              width="7"
+                            />
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td valign="top" width="10">
+                    <img src="images/nav-rite.jpg" height="51" width="10" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td bgcolor="#365313" valign="top" width="960">&nbsp;</td>
+        </tr>
+        <tr>
+          <td bgcolor="#365313" valign="top" width="960">
+            <table
+              align="center"
+              border="0"
+              cellpadding="0"
+              cellspacing="0"
+              width="937"
+            >
+              <tbody>
+                <tr>
+                  <td valign="top" width="220">
+                    <table
+                      border="0"
+                      cellpadding="0"
+                      cellspacing="0"
+                      width="220"
+                    >
+                      <tbody>
+                        <tr>
+                          <td
+                            class="head-1"
+                            style="background-repeat: no-repeat"
+                            background="images/casino-links.jpg"
+                            height="39"
+                            valign="middle"
+                            width="220"
+                          >
+                            &nbsp;&nbsp;&nbsp;Jugadas
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            bgcolor="#E8F5D6"
+                            height="22"
+                            valign="middle"
+                            width="220"
+                          >
+                            <div style="padding-left: 22px">
+                              <img
+                                src="images/bullet.jpg"
+                                align="absmiddle"
+                                height="15"
+                                width="15"
+                              />&nbsp;&nbsp;&nbsp;<a href="#" class="navbar3"
+                                >Color</a
+                              >
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td
+                            bgcolor="#E8F5D6"
+                            height="22"
+                            valign="middle"
+                            width="220"
+                          >
+                            <div
+                              style="padding-left: 22px; padding-bottom: 15px"
+                            >
+                              <img
+                                src="images/bullet.jpg"
+                                align="absmiddle"
+                                height="15"
+                                width="15"
+                              />&nbsp;&nbsp;&nbsp;<a href="#" class="navbar3"
+                                >Esclera Real</a
+                              >
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td valign="top" width="13">&nbsp;</td>
+                  <td valign="top" width="704">
+                    <table
+                      border="0"
+                      cellpadding="0"
+                      cellspacing="0"
+                      width="704"
+                    >
+                      <tbody>
+                        <tr>
+                          <td class="head-3" valign="top" width="704">
+                            <div style="padding-top: 9px">
+                              &nbsp;Calcula tus probabilidades de conseguir un
+                              juego
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td height="6" valign="top" width="704"><br /></td>
+                        </tr>
 
-      <div class="container-fluid p-0 ">
-        <div class="row" id="row">
+                        <tr>
+                          <td class="txt-2" valign="top" width="704">
+                            &nbsp;Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit. Nullam in mauris at sem mattis
+                            elementum. Etiam erat nunc, venenatis quis ultrices
+                            vulpute &nbsp;ate, iaculis ac odio. Nullam non
+                            laoreet sapien. Morbi adipiscing, lacus non tempus
+                            porta, ligula tellus pulvinar neque. <br />
+                            <br />
+                            &nbsp;Aliquam cursus, lorem vitae blandit lobortis,
+                            felis mi laoreet arcu, ac vehicula ligula elit nec
+                            mauris. Integer quis mauris sed odio fermentum
+                            porttier &nbsp;tor in ac orci. Morbi vel felis
+                            metus, non varius est. Nunc venenatis, diam ut
+                            facilisis suscipit, sapien felis vulputate erat.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top" width="704">&nbsp;</td>
+                        </tr>
 
-          
-        </div>
-      </div>
-    </div>
+                        <tr>
+                          <td valign="top" width="704">
+                            <table
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              width="704"
+                            >
+                              <tbody>
+                                <tr>
+                                  <div>
+                                    <input
+                                      id="numero1"
+                                      type="text"
+                                      placeholder="Ingrese el numero de la carta"
+                                    />
+                                    <input
+                                      id="numero2"
+                                      type="text"
+                                      placeholder="Ingrese el numero de la segunda carta"
+                                    />
+                                    <button id="btn3" onclick="Calcular()">
+                                      Calcular
+                                    </button>
+                                    <div class="container mt-3" id="resultado"></div>
+
+                                    <div class="container-fluid p-0">
+                                      <div class="row" id="row"></div>
+                                    </div>
+                                  </div>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top" width="704">&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td valign="top" width="704">
+                            <table
+                              border="0"
+                              cellpadding="0"
+                              cellspacing="0"
+                              width="704"
+                            >
+                              <tbody>
+                                <tr></tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top" width="704">&nbsp;</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td bgcolor="#365313" valign="top" width="960">&nbsp;</td>
+        </tr>
+        <tr>
+          <td valign="top" width="960">
+            <table border="0" cellpadding="0" cellspacing="0" width="960">
+              <tbody>
+                <tr>
+                  <td valign="top" width="10">
+                    <img src="images/ftr-lft.jpg" height="51" width="10" />
+                  </td>
+                  <td
+                    style="background-repeat: repeat-x"
+                    background="images/ftr-bg.jpg"
+                    valign="top"
+                    width="940"
+                  >
+                    <table
+                      align="center"
+                      border="0"
+                      cellpadding="0"
+                      cellspacing="0"
+                      width="910"
+                    >
+                      <tbody>
+                        <tr></tr>
+                      </tbody>
+                    </table>
+                  </td>
+                  <td valign="top" width="10">
+                    <img src="images/ftr-rite.jpg" height="51" width="10" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <!--Do Not Remove The Designer Links-->
+          <td
+            class="txt-3"
+            align="center"
+            height="50"
+            valign="middle"
+            width="960"
+          >
+            Designed by Pablo Méndez &amp; Felipe Etchevers
+            <a
+              target="_blank"
+              href="http://www.pokertemplates.net"
+              class="style4"
+              >Copyright</a
+            >
+            |
+            <a
+              target="_blank"
+              href="http://www.usaonlinecasinos.casino"
+              class="style4"
+              >All rights reserved</a
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!--Do Not Remove The Designer Links-->
+    <!--Template distributed by-->
+    <a href="http://www.pokertemplates.net"
+      ><img src="images/footer_img.gif" class="copyright" alt="poker templates"
+    /></a>
+    <!--Template designed by-->
+    <a href="http://www.usaonlinecasinos.casino"
+      ><img
+        src="images/footer_img.gif"
+        class="copyright"
+        alt="usa online casinos"
+    /></a>
 
     <script src="main.js"></script>
     <!-- JavaScript Bundle with Popper -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-      crossorigin="anonymous"
-    ></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   </body>
 </html>
