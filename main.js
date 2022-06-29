@@ -1,7 +1,7 @@
 const res = require("express/lib/response");
 
 function Calcular() {
-  let url = "https://deckofcardsapi.com/api/deck/new/draw/?count=52";
+  let url = "https://deckofcardsapi.com/api/deck/new/draw/?count=50";
 
   fetch(url)
     .then((response) => response.json())
@@ -11,9 +11,9 @@ function Calcular() {
       let card2 = document.getElementById("numero2").value;
       let resultado = document.getElementById("resultado");
 
-      for (let i = 0; i < 52; i++) {
+      for (let i = 0; i < 50; i++) {
         if (card1 == data.cards[i].code) {
-          for (let j = 0; j < 52; j++) {
+          for (let j = 0; j < 50; j++) {
             if (card2 == data.cards[j].code) {
               if (card1 == card2) {
                 resultado.innerHTML = `
@@ -44,7 +44,7 @@ function Calcular() {
                         Probabilidades de conseguir Color: 
                       </div>
                       <div class="col-12">
-                        <Sup>${color[0]}</sup>/<sub>${color[1]}</sub>
+                        ${(color[0] / color[1]) * 100}%
                       </div>
                     </h3>
                   </div>
@@ -54,7 +54,7 @@ function Calcular() {
                         Probabilidades de conseguir Escalera Real: 
                       </div>
                       <div class="col-12">
-                        <Sup>${real[0]}</sup>/<sub>${real[1]}</sub>
+                      ${(real[0] / real[1]) * 100}%
                       </div>
                     </h3>
                   </div>
@@ -78,34 +78,23 @@ function Factorial(n) {
 
 function CalcularCombinatoriaColor(palo1, palo2) 
 {
-  let resultado = 0;
-
   if (palo1 == palo2) 
   {
-    let resultado1 =
-      (((Factorial(11) / (Factorial(11 - 3) * 6)) * 39) * 38) / (Factorial(52) / (Factorial(52 - 5) * 120));
-    let resultado2 =
-      ((Factorial(12) / (Factorial(12 - 4) * 24)) * 38) /
-      (Factorial(52) / (Factorial(52 - 5) * 120));
-    let resultado3 =
-      Factorial(12) /
-      (Factorial(12 - 5) * 120) /
-      (Factorial(52) / (Factorial(52 - 5) * 120));
-    resultado = resultado1 + resultado2 + resultado3;
-    resultadoPosible = (Factorial(39) / (Factorial(39 - 5) * 120) / (Factorial(52) / (Factorial(52 - 5) * 120))) * 3
+    let resultado1 = ((Factorial(11) / (Factorial(11 - 3) * 6)) * 39) * 38;
+    let resultado2 = (Factorial(11) / (Factorial(11 - 4) * 24)) * 38;
+    let resultado3 = Factorial(11) / (Factorial(11 - 5) * 120);
+    let resultado4 = (Factorial(13) / (Factorial(13 - 5) * 120)) * 3;
+    let resultado = resultado1 + resultado2 + resultado3 + resultado4;
+    let resultadoPosible = Factorial(50) / (Factorial(50 - 5) * 120);
     resultadoTotal = [resultado, resultadoPosible];
     return resultadoTotal;
   } 
   else {
-    let resultado1 =
-      ((Factorial(12) / (Factorial(12 - 4) * 24)) * 38) /
-      (Factorial(52) / (Factorial(52 - 5) * 120));
-    let resultado2 =
-      Factorial(12) /
-      (Factorial(12 - 5) * 120) /
-      (Factorial(52) / (Factorial(52 - 5) * 120));
-    resultado = 2 * (resultado1 + resultado2);
-    resultadoPosible = ((Factorial(26) / (Factorial(26 - 5) * 120))/ (Factorial(52) / (Factorial(52 - 5) * 120))) * 2;
+    let resultado1 = ((Factorial(12) / (Factorial(12 - 4) * 24)) * 38);
+    let resultado2 = (Factorial(12) / (Factorial(12 - 5) * 120));
+    let resultado3 = 2 * (Factorial(26) / (Factorial(26 - 5) * 120));
+    resultado = (2 * (resultado1 + resultado2)) + resultado3;
+    resultadoPosible = (Factorial(50) / (Factorial(50 - 5) * 120));
     resultadoTotal = [resultado, resultadoPosible];
     return resultadoTotal;
   }
