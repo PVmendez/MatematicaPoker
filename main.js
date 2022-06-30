@@ -111,7 +111,7 @@ function CalcularCombinatoriaEscaleraReal(n1, n2) {
         return resultado;
       }
       // me sirven las 2 pero son de distinto palo
-      let resultadoNumerador = 2 * 46 + 2;
+      let resultadoNumerador = (2 * 46) + 2;
       let resultadoDenominador = (Factorial(50) / (Factorial(50 - 5) * Factorial(5)));
       let resultado = [resultadoNumerador, resultadoDenominador];
       return resultado;
