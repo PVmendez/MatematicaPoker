@@ -105,20 +105,20 @@ function CalcularCombinatoriaEscaleraReal(n1, n2) {
     if (n2.value == "KING" ||n2.value == "QUEEN" || n2.value == "JACK" || n2.value == "10" || n2.value == "ACE") {
       if(n1.suit == n2.suit) {
         // me sirven las 2
-        let resultadoNumerador = (47 * 46)
+        let resultadoNumerador = (47 * 46) + 3;
         let resultadoDenominador = (Factorial(50) / (Factorial(50 - 5) * Factorial(5)));
         let resultado = [resultadoNumerador, resultadoDenominador];
         return resultado;
       }
       // me sirven las 2 pero son de distinto palo
-      let resultadoNumerador = 2 * 46;
+      let resultadoNumerador = 2 * 46 + 2;
       let resultadoDenominador = (Factorial(50) / (Factorial(50 - 5) * Factorial(5)));
       let resultado = [resultadoNumerador, resultadoDenominador];
       return resultado;
     } 
     else {
       // me sirve solo n1
-      let resultadoNumerador = 46;
+      let resultadoNumerador = 46 + 3;
       let resultadoDenominador = (Factorial(50) / (Factorial(50 - 5) * Factorial(5)));
       let resultado = [resultadoNumerador, resultadoDenominador];
       return resultado;
@@ -126,7 +126,7 @@ function CalcularCombinatoriaEscaleraReal(n1, n2) {
   } 
   else if (n2.value == "KING" ||n2.value == "QUEEN" ||n2.value == "JACK" ||n2.value == "10" ||n2.value == "ACE") {
     // me sirve solo n2
-    let resultadoNumerador = 2 * 46;
+    let resultadoNumerador = 46 + 3;
     let resultadoDenominador = (Factorial(50) / (Factorial(50 - 5) * Factorial(5)));
     let resultado = [resultadoNumerador, resultadoDenominador];
     return resultado;
