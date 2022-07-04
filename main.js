@@ -92,7 +92,7 @@ function CalcularCombinatoriaColor(palo1, palo2)
   else {
     let resultado1 = ((Factorial(12) / (Factorial(12 - 4) * 24)) * 38);
     let resultado2 = (Factorial(12) / (Factorial(12 - 5) * 120));
-    let resultado3 = 2 * (Factorial(26) / (Factorial(26 - 5) * 120));
+    let resultado3 = 2 * (Factorial(13) / (Factorial(13 - 5) * 120));
     resultado = (2 * (resultado1 + resultado2)) + resultado3;
     resultadoPosible = (Factorial(50) / (Factorial(50 - 5) * 120));
     resultadoTotal = [resultado, resultadoPosible];
